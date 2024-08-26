@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öğrenci Profilleri - Özel Ders Platformu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Özel Ders Platformu</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Giriş</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="register.html">Kayıt Ol</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Öğrenci Profil Kartları -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Öğrenci Profilleri</h2>
+        <div class="row">
+            <!-- Öğrenci 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="student.3.jpg" class="card-img-top" alt="Öğrenci 1 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Ahmet Demir</h5>
+                        <p class="card-text"><strong>Yaş:</strong> 17</p>
+                        <p class="card-text"><strong>Okul:</strong> ABC Lisesi</p>
+                        <p class="card-text"><strong>İlgi Alanları:</strong> Matematik, Bilgisayar Bilimleri</p>
+                        <h6>Ders Talepleri:</h6>
+                        <ul>
+                            <li>Matematik: Temel Bilgiler</li>
+                            <li>Bilgisayar Bilimleri: Python Programlama</li>
+                        </ul>
+                        <a href="edit-profile.html" class="btn btn-primary">Profil Düzenle</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Öğrenci 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="student.1.jpg" class="card-img-top" alt="Öğrenci 2 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Zeynep Yılmaz</h5>
+                        <p class="card-text"><strong>Yaş:</strong> 16</p>
+                        <p class="card-text"><strong>Okul:</strong> XYZ Lisesi</p>
+                        <p class="card-text"><strong>İlgi Alanları:</strong> Fizik, Kimya</p>
+                        <h6>Ders Talepleri:</h6>
+                        <ul>
+                            <li>Fizik: Klasik Mekanik</li>
+                            <li>Kimya: Organik Kimya</li>
+                        </ul>
+                        <a href="edit-profile.html" class="btn btn-primary">Profil Düzenle</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Öğrenci 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="student.2.jpg" class="card-img-top" alt="Öğrenci 3 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Merve Kızıl</h5>
+                        <p class="card-text"><strong>Yaş:</strong> 18</p>
+                        <p class="card-text"><strong>Okul:</strong> DEF Lisesi</p>
+                        <p class="card-text"><strong>İlgi Alanları:</strong> Tarih, Edebiyat</p>
+                        <h6>Ders Talepleri:</h6>
+                        <ul>
+                            <li>Tarih: Osmanlı Tarihi</li>
+                            <li>Edebiyat: Türk Edebiyatı</li>
+                        </ul>
+                        <a href="edit-profile.html" class="btn btn-primary">Profil Düzenle</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ders Talepleri Oluşturma Formu -->
+        <div class="mt-5">
+            <h3 class="text-center mb-4">Yeni Ders Talebi Oluştur</h3>
+            <form>
+                <div class="form-group">
+                    <label for="subject">Ders Konusu:</label>
+                    <input type="text" class="form-control" id="subject" placeholder="Ders konusu girin">
+                </div>
+                <div class="form-group">
+                    <label for="details">Açıklama:</label>
+                    <textarea class="form-control" id="details" rows="3" placeholder="Ders hakkında detaylı bilgi girin"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="preferredDate">Tercih Edilen Tarih:</label>
+                    <input type="date" class="form-control" id="preferredDate">
+                </div>
+                <button type="submit" class="btn btn-primary">Ders Talebini Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
