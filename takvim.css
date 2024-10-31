@@ -29,3 +29,9 @@ h2 {
     border-top: 1px solid #6c757d; /* Çizgi */
     margin: 10px 0;
 }
+
+.contact-info {
+    display: block;
+    font-size: 0.9em;
+    color: #555555;
+}
