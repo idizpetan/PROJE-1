@@ -32,3 +32,17 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     // Form alanlarını temizle
     document.getElementById('contactForm').reset();
 });
+document.getElementById('appointmentForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Formun otomatik olarak gönderilmesini engelle
+
+    // Form verilerini al
+    const teacherName = document.getElementById('teacherName').value;
+    const appointmentDate = document.getElementById('appointmentDate').value;
+    const appointmentTime = document.getElementById('appointmentTime').value;
+
+    // Randevu bilgilerini göster
+    alert(`Randevu Alındı:\nEğitmen: ${teacherName}\nTarih: ${appointmentDate}\nSaat: ${appointmentTime}`);
+
+    // Formu sıfırla
+    this.reset();
+});
