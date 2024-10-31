@@ -18,11 +18,6 @@
         margin: 5px 0;
     }
 }
-.card-img-top {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
@@ -73,7 +68,7 @@ input[type="submit"]:hover {
 }
 
 .message {
-    display: none; /* Başlangıçta gizli */
+    display: none;
     padding: 10px;
     background-color: #d4edda;
     color: #155724;
@@ -98,5 +93,23 @@ input[type="submit"]:hover {
 }
 
 .btn-primary:hover {
-    background-color: #0056b3; /* Hover */
+    background-color: #0056b3;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.card-body {
+    min-height: 250px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    object-fit: cover;
+    height: 200px;
 }

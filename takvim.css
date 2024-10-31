@@ -22,11 +22,11 @@ h2 {
 
 .calendar-cell strong {
     font-size: 1.2em;
-    text-transform: uppercase; /* Büyük harfle yazma */
+    text-transform: uppercase;
 }
 
 .divider {
-    border-top: 1px solid #6c757d; /* Çizgi */
+    border-top: 1px solid #6c757d;
     margin: 10px 0;
 }
 
@@ -34,4 +34,12 @@ h2 {
     display: block;
     font-size: 0.9em;
     color: #555555;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: burlywood;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
