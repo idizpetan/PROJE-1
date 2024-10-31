@@ -8,3 +8,23 @@ form.addEventListener('submit', function(event) {
         event.preventDefault(); // Form gönderimini engelle
     }
 });
+function submitForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+
+    // Form verilerini işleme (örneğin, bir sunucuya gönderme)
+    console.log('Ad:', name);
+    console.log('E-posta:', email);
+    console.log('Konu:', subject);
+    console.log('Mesaj:', message);
+    
+    // Kullanıcıya mesaj gönderildiğine dair bir bildirim
+    const successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+    
+    // Form alanlarını temizle
+    document.getElementById('contactForm').reset();
+    return false; // Formun varsayılan gönderimini engelle
+}
