@@ -5,31 +5,6 @@ body {
 h2 {
     margin-bottom: 30px;
 }
-
-.calendar {
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    gap: 10px;
-}
-
-.calendar-cell {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.calendar-cell strong {
-    font-size: 1.2em;
-    text-transform: uppercase;
-}
-
-.divider {
-    border-top: 1px solid #6c757d;
-    margin: 10px 0;
-}
-
 .contact-info {
     display: block;
     font-size: 0.9em;
@@ -38,8 +13,36 @@ h2 {
 .container {
     max-width: 600px;
     margin: auto;
-    background: burlywood;
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.calendar {
+    display: flex;
+    flex-wrap: wrap; /* Flex kutularının birden fazla satıra yayılmasını sağlar */
+    border: 1px solid #ddd; /* Kenarlık */
+    border-radius: 8px; /* Kenar yuvarlama */
+    overflow: hidden; /* Taşmayı önler */
+}
+
+.calendar-cell {
+    flex: 1 1 30%; /* Her hücre %30 genişliğe sahip olacak şekilde ayarlanır */
+    padding: 15px; /* İçerik boşluğu */
+    border-right: 1px solid #ddd; /* Sağ kenarlık */
+    min-height: 150px; /* Minimum yükseklik ayarı */
+    display: flex; /* İçeriği ortalamak için flex kullan */
+    flex-direction: column; /* İçerikleri dikey olarak hizala */
+    justify-content: space-between; /* İçerikler arasında boşluk bırak */
+}
+
+.calendar-cell:last-child {
+    border-right: none; /* Son hücrenin sağ kenarlığını kaldır */
+}
+
+.divider {
+    height: 2px;
+    background-color: #007bff; /* Mavi ayırıcı */
+    margin: 10px 0; /* Üst ve alt boşluk */
+}
+
