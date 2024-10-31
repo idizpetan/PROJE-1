@@ -8,9 +8,10 @@ form.addEventListener('submit', function(event) {
         event.preventDefault(); // Form gönderimini engelle
     }
 });
-document.getElementById("searchInput").addEventListener("keyup", function() {
+document.getElementById("searchInput").addEventListener("keyup", function search() {
     var input = document.getElementById("searchInput").value.toLowerCase();
     var cards = document.getElementsByClassName("card");
+    window.location.href =`Teacher.html`
 
     for (var i = 0; i < cards.length; i++) {
         var cardText = cards[i].innerText.toLowerCase();
