@@ -3,17 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeni Ders Talebi Oluşturma</title>
+    <title>Ders Arama Sayfası</title>
     <link rel="stylesheet" href="proje.1.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="proje.1.js"></script>
-    <style>
-        .card-container {
-            max-width: 500px;
-            margin: 50px auto;
-        }
-    </style>
+    
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -48,17 +43,115 @@
     </nav>
 
     <!--ders arama-->
-
-
-
-
-
-
-
-
-
-
-
+    <div class="containerlesson mt-5">
+        <h2 class="text-center mb-4">Ders Arama</h2>
+    
+        <!-- Filtreleme Seçenekleri -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <select class="form-control" id="subject-filter">
+                    <option value="">Tüm Konular</option>
+                    <option value="matematik">Matematik</option>
+                    <option value="fizik">Fizik</option>
+                    <option value="kimya">Kimya</option>
+                    <option value="biyoloji">Biyoloji</option>
+                    <option value="tarih">Tarih</option>
+                    <option value="edebiyat">Edebiyat</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <input type="text" id="search-input" class="form-control" placeholder="Eğitmen Ara...">
+            </div>
+            <div class="col-md-4">
+                <button id="search-button" class="btn btn-primary btn-block">Ara</button>
+            </div>
+        </div>
+    
+        <!-- Eğitmen Profil Kartları -->
+        <div class="row" id="teacher-cards">
+            <!-- Eğitmen 1 -->
+            <div class="col-md-4 mb-4 d-flex align-items-stretch card-item" data-subject="matematik">
+                <div class="card">
+                    <img src="teacher.1.jpg" class="card-img-top" alt="Eğitmen 1 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Ahmet Yılmaz</h5>
+                        <p class="card-text"><strong>Uzmanlık Alanı:</strong> Matematik</p>
+                        <p class="card-text"><strong>Hakkında:</strong> 15 yıllık deneyime sahip matematik öğretmeni. Lisans ve yüksek lisans eğitimini Boğaziçi Üniversitesi'nde tamamladı.</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 150 TL/saat</p>
+                        <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Eğitmen 2 -->
+            <div class="col-md-4 mb-4 d-flex align-items-stretch card-item" data-subject="fizik">
+                <div class="card">
+                    <img src="teacher.3.jpg" class="card-img-top" alt="Eğitmen 2 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Elif Kaya</h5>
+                        <p class="card-text"><strong>Uzmanlık Alanı:</strong> Fizik</p>
+                        <p class="card-text"><strong>Hakkında:</strong> 7 yıllık deneyime sahip fizik öğretmeni. Lisans eğitimini İstanbul Üniversitesi'nde tamamladı ve araştırma çalışmalarına devam ediyor.</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 180 TL/saat</p>
+                        <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Eğitmen 3 -->
+            <div class="col-md-4 mb-4 d-flex align-items-stretch card-item" data-subject="kimya">
+                <div class="card">
+                    <img src="teacher.2.jpg" class="card-img-top" alt="Eğitmen 3 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Mehmet Demir</h5>
+                        <p class="card-text"><strong>Uzmanlık Alanı:</strong> Kimya</p>
+                        <p class="card-text"><strong>Hakkında:</strong> 5 yıllık deneyime sahip kimya öğretmeni. İstanbul Teknik Üniversitesi'nde lisans ve yüksek lisans eğitimini tamamladı.</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 200 TL/saat</p>
+                        <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Diğer Eğitmenler (benzer yapıda) -->
+            <div class="col-md-4 mb-4 d-flex align-items-stretch card-item" data-subject="biyoloji">
+                <div class="card">
+                    <img src="teacher.5.jpg" class="card-img-top" alt="Eğitmen 4 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Ozan Kaya</h5>
+                        <p class="card-text"><strong>Uzmanlık Alanı:</strong> Biyoloji</p>
+                        <p class="card-text"><strong>Hakkında:</strong> 10 yıllık deneyime sahip biyoloji öğretmeni. Lisans eğitimini Galatasaray Üniversitesi'nde tamamladı.</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 90 TL/saat</p>
+                        <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4 d-flex align-items-stretch card-item" data-subject="tarih">
+                <div class="card">
+                    <img src="teacher.4.jpg" class="card-img-top" alt="Eğitmen 5 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Melisa Türker</h5>
+                        <p class="card-text"><strong>Uzmanlık Alanı:</strong> Tarih</p>
+                        <p class="card-text"><strong>Hakkında:</strong> 10 yıllık deneyime sahip tarih öğretmeni. Lisans ve yüksek lisans eğitimini Ege Üniversitesi'nde tamamladı.</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 100 TL/saat</p>
+                        <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="col-md-4 mb-4 d-flex align-items-stretch card-item" data-subject="edebiyat">
+                <div class="card">
+                    <img src="teacher.6.jpg" class="card-img-top" alt="Eğitmen 6 Resmi">
+                    <div class="card-body">
+                        <h5 class="card-title">Fahriye Şerin</h5>
+                        <p class="card-text"><strong>Uzmanlık Alanı:</strong> Edebiyat</p>
+                        <p class="card-text"><strong>Hakkında:</strong> 20 yıllık deneyime sahip Türkçe öğretmeni. Lisans ve yüksek lisans eğitimini Dokuz Eylül Üniversitesi'nde tamamladı.</p>
+                        <p class="card-text"><strong>Fiyat:</strong> 200 TL/saat</p>
+                        <a href="contact.html" class="btn btn-primary">İletişime Geç</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">

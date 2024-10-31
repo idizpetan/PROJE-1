@@ -81,3 +81,22 @@ input[type="submit"]:hover {
     border-radius: 4px;
     margin-top: 10px;
 }
+.containerlesson {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Hover */
+}  
