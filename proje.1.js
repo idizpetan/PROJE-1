@@ -10,7 +10,7 @@ form.addEventListener('submit', function(event) {
 });
 document.getElementById("searchInput").addEventListener("keyup", function() {
     var input = document.getElementById("searchInput").value.toLowerCase();
-    var cards = document.getElementsByClassName("card");
+    var cards = document.getElementsByClassName("t.card");
 
     for (var i = 0; i < cards.length; i++) {
         var cardText = cards[i].innerText.toLowerCase();
