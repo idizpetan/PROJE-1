@@ -1,3 +1,7 @@
 .button-container {
     text-align: center;
 }
+.teacher.card {
+    width: 300px;
+    height: 400px;
+}
