@@ -85,6 +85,7 @@ let currentEvent; // Seçilen etkinlik değişkeni
             const eventStart = appointmentDate + 'T' + appointmentTime + ':00';
             const eventEnd = appointmentDate + 'T' + (parseInt(appointmentTime.split(':')[0]) + 1) + ':00:00'; // 1 saatlik randevu
 
+            // Randevuyu takvime ekleme
             $('#calendar').fullCalendar('renderEvent', {
                 title: teacherName,
                 start: eventStart,
