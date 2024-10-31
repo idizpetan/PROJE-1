@@ -32,17 +32,84 @@ document.getElementById('contactForm').addEventListener('submit', function (even
     // Form alanlarını temizle
     document.getElementById('contactForm').reset();
 });
-document.getElementById('appointmentForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Formun otomatik olarak gönderilmesini engelle
+let currentEvent; // Seçilen etkinlik değişkeni
 
-    // Form verilerini al
-    const teacherName = document.getElementById('teacherName').value;
-    const appointmentDate = document.getElementById('appointmentDate').value;
-    const appointmentTime = document.getElementById('appointmentTime').value;
+    $(document).ready(function() {
+        // Takvim oluşturma
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            editable: true,
+            events: [
+                {
+                    title: 'Ahmet Yılmaz - Matematik',
+                    start: '2024-11-01T14:00:00',
+                    end: '2024-11-01T15:00:00',
+                    description: 'Öğrenci: Ahmet Demir',
+                    id: 1
+                },
+                {
+                    title: 'Elif Kaya - Fizik',
+                    start: '2024-11-02T16:00:00',
+                    end: '2024-11-02T17:00:00',
+                    description: 'Öğrenci: Zeynep Yılmaz',
+                    id: 2
+                },
+                {
+                    title: 'Mehmet Demir - Tarih',
+                    start: '2024-11-03T10:00:00',
+                    end: '2024-11-03T11:00:00',
+                    description: 'Öğrenci: Merve Kızıl',
+                    id: 3
+                }
+            ],
+            eventRender: function(event, element) {
+                element.bind('click', function() {
+                    currentEvent = event; // Seçilen etkinliği sakla
+                    $('#modalDescription').text(event.title + '\n' + event.description);
+                    $('#appointmentModal').modal('show');
+                });
+            }
+        });
 
-    // Randevu bilgilerini göster
-    alert(`Randevu Alındı:\nEğitmen: ${teacherName}\nTarih: ${appointmentDate}\nSaat: ${appointmentTime}`);
+        // Yeni randevu alma
+        $('#appointmentForm').on('submit', function(event) {
+            event.preventDefault(); // Formun otomatik olarak gönderilmesini engelle
 
-    // Formu sıfırla
-    this.reset();
-});
+            const teacherName = $('#teacherName').val();
+            const appointmentDate = $('#appointmentDate').val();
+            const appointmentTime = $('#appointmentTime').val();
+            const eventStart = appointmentDate + 'T' + appointmentTime + ':00';
+            const eventEnd = appointmentDate + 'T' + (parseInt(appointmentTime.split(':')[0]) + 1) + ':00:00'; // 1 saatlik randevu
+
+            $('#calendar').fullCalendar('renderEvent', {
+                title: teacherName,
+                start: eventStart,
+                end: eventEnd,
+                description: 'Öğrenci: Belirtilmemiş',
+                id: Date.now() // Benzersiz bir ID oluştur
+            });
+
+            // Randevu isteği alındı mesajı
+            alert("Randevu isteğiniz alınmıştır!");
+
+            // Formu sıfırla
+            this.reset();
+        });
+
+        // Randevu onaylama
+        $('#confirmAppointment').on('click', function() {
+            alert(currentEvent.title + ' onaylandı!');
+            $('#appointmentModal').modal('hide');
+        });
+
+        // Randevu iptal etme
+        $('#cancelAppointment').on('click', function() {
+            $('#calendar').fullCalendar('removeEvents', currentEvent.id); // Randevuyu takvimden kaldır
+            alert(currentEvent.title + ' iptal edildi!');
+            $('#appointmentModal').modal('hide');
+        });
+    });
