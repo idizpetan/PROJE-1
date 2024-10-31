@@ -101,15 +101,20 @@ input[type="submit"]:hover {
     height: 100%;
 }
 
+.card-img-top {
+    height: 180px; /* Tüm resimler için sabit yükseklik */
+    width: 100%; /* Kart genişliği kadar */
+    object-fit: cover; /* Resimleri kırpmadan kart alanına sığdır */
+}
+
 .card-body {
-    min-height: 250px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    text-align: center;
 }
 
-.card img {
-    object-fit: cover;
-    height: 200px;
+.card .btn {
+    margin-top: auto;
 }
