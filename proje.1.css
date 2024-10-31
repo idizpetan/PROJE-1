@@ -73,7 +73,7 @@ input[type="submit"]:hover {
 }
 
 .message {
-    display: none;
+    display: none; /* Başlangıçta gizli */
     padding: 10px;
     background-color: #d4edda;
     color: #155724;
