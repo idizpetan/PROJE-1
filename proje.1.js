@@ -7,8 +7,10 @@ form.addEventListener('submit', function(event) {
         alert('Şifreler eşleşmiyor!');
         event.preventDefault(); // Form gönderimini engelle
     }
-});
-function submitForm() {
+})
+document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Formun varsayılan gönderimini engelle
+
     const name = document.getElementById('name').value;
     const email = document.getElementById('email').value;
     const subject = document.getElementById('subject').value;
@@ -19,12 +21,14 @@ function submitForm() {
     console.log('E-posta:', email);
     console.log('Konu:', subject);
     console.log('Mesaj:', message);
-    
+
     // Kullanıcıya mesaj gönderildiğine dair bir bildirim
     const successMessage = document.getElementById('successMessage');
     successMessage.style.display = 'block';
+    setTimeout(() => {
+        successMessage.style.display = 'none'; // 3 saniye sonra mesajı gizle
+    }, 3000);
     
     // Form alanlarını temizle
     document.getElementById('contactForm').reset();
-    return false; // Formun varsayılan gönderimini engelle
-}
+});
