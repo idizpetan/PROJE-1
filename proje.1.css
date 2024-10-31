@@ -102,9 +102,9 @@ input[type="submit"]:hover {
 }
 
 .card-img-top {
-    height: 180px; /* Tüm resimler için sabit yükseklik */
-    width: 100%; /* Kart genişliği kadar */
-    object-fit: cover; /* Resimleri kırpmadan kart alanına sığdır */
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .card-body {
