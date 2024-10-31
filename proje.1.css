@@ -106,3 +106,8 @@ input[type="submit"]:hover {
     height: 200px;
     object-fit: cover;
 }
+.giriş {
+    color:blue;
+    border-color: #333;
+    background-color: cadetblue;
+}
