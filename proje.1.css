@@ -99,7 +99,4 @@ input[type="submit"]:hover {
 
 .btn-primary:hover {
     background-color: #0056b3; /* Hover */
-} 
-.t.card {
-    outline: 2px black ;
 }
